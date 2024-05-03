@@ -19,7 +19,7 @@
 - name: import common code 
   ansible.builtin.import_role:
     name: commonforrallroles
-    tasks_from: appcode.yaml
+    tasks_from: appcode
 
 - name: run npm command
   ansible.builtin.command:  npm install
