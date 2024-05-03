@@ -11,7 +11,7 @@
 
 - name: import common code 
   ansible.builtin.import_role:
-    name: commonforallroles
+    name: commonforrallroles
     tasks_from: appcode.yaml
     
 - name: copy frontend config file using template module
