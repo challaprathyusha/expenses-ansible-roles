@@ -1,5 +1,5 @@
 - name: configuring db server
-  hosts:  db
+  hosts:  web
   become: yes
   roles:
     - web
