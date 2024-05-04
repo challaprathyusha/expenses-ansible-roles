@@ -17,11 +17,13 @@
     name: expense
 
 - name: import common code 
+  tags: deployment
   ansible.builtin.import_role:
     name: commonforrallroles
     tasks_from: appcode
 
 - name: run npm command
+  tags: deployment
   ansible.builtin.command:  "npm install"
   args:
     chdir:  /app
@@ -54,8 +56,15 @@
 #  ansible.builtin.systemd_service:
 #     daemon_reload: true
 
+#- name: start and enable the backend
+# ansible.builtin.systemd_service:
+#   name: backend
+#   state: started
+#   enabled: true
+
 - name: start and enable the backend
+  tags: deployment
   ansible.builtin.systemd_service:
     name: backend
-    state: started
+    state: restarted
     enabled: true
