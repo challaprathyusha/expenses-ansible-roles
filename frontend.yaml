@@ -1,4 +1,4 @@
-- name: configuring db server
+- name: configuring frontend server
   hosts:  web
   become: yes
   vars_files:
