@@ -30,6 +30,8 @@
   ansible.builtin.template:
     src:  backend.service.j2
     dest: /etc/systemd/system/backend.service
+  notify:
+    - reload daemon
 
 - name: pip module to install pymysql
   ansible.builtin.pip:
@@ -48,9 +50,9 @@
     target: /app/schema/backend.sql
     name: all
 
-- name: reload daemon
-  ansible.builtin.systemd_service:
-    daemon_reload: true
+#- name: reload daemon
+#  ansible.builtin.systemd_service:
+#     daemon_reload: true
 
 - name: start and enable the backend
   ansible.builtin.systemd_service:
