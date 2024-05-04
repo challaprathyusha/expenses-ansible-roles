@@ -1,4 +1,4 @@
-- name: delete a directory
+- name: delete app directory if exists
   ansible.builtin.file:
     path: "{{app_location}}"
     state:  absent

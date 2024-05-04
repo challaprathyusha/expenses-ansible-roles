@@ -24,7 +24,7 @@
 - name: run npm command
   ansible.builtin.command:  "npm install"
   args:
-    chdir:  "{{app_location}}"
+    chdir:  /app
 
 - name: template module to copy backend service file   
   ansible.builtin.template:
