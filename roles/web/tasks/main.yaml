@@ -9,10 +9,13 @@
     state: started
     enabled:  yes
 
-- name: import common code 
+- name: import common code
+  tags: deployment
   ansible.builtin.import_role:
     name: commonforrallroles
     tasks_from: appcode
+  notify:
+    - restart nginx
     
 - name: copy frontend config file using template module
   ansible.builtin.template:
