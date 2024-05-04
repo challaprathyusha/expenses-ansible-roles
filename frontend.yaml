@@ -1,5 +1,7 @@
 - name: configuring db server
   hosts:  web
   become: yes
+  vars_files:
+    - secrets.yaml
   roles:
     - web

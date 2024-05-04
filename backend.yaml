@@ -1,5 +1,7 @@
 - name: configuring backend server
   hosts:  app
   become: yes
+  vars_files:
+    - secrets.yaml
   roles:
     - app
