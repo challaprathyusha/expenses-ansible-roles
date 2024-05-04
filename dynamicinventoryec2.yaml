@@ -1,0 +1,8 @@
+- name: install postfix using dynamic inventory
+  hosts:  all
+  become: yes
+  tasks:
+    - name: install postfix in all backend servers 
+      ansible.builtin.dnf:
+        name: postfix
+        state:  present
