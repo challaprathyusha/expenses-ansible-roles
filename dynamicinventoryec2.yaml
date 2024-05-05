@@ -6,3 +6,4 @@
       ansible.builtin.dnf:
         name: postfix
         state:  present
+    
